@@ -29,3 +29,11 @@
     }
     .row.content {height:auto;} 
   }
+  #changeText {
+    color: black;
+    background-color: #555;
+  }
+  #changeText2 {
+    color: black;
+    background-color: #555;
+  }
