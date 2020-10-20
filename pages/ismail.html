@@ -10,13 +10,13 @@
       padding: 70px;
       font-size:50px ;
     }
-    .bolme{
+    #bolme{
       width: 60px;
     }
     .eqal{
       width: 50px;
     }
-    .islem {
+    .ekran1 {
        width: 231px;
        text-align: right;
        font-size: 34px;
@@ -39,9 +39,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="./pages/ismail.html">İsmail</a></li>
-        <li><a href="./pages/ihsan.html">İhsan</a></li>
+        <li class="active"><a href="../index.html">Home</a></li>
+        <li><a href="ismail.html">İsmail</a></li>
+        <li><a href="ihsan.html">İhsan</a></li>
         <li><a href="#">Projects</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -57,42 +57,43 @@
 
           </div>
           <div class="col-sm-8 text-left">
-
-            <ul class="list-group islem">
-              <li class="list-group-item list-group-item-dark ml-9" style="color: rgb(77, 181, 230); border: 5px solid rgb(0, 0, 0);">
-                0</li>
-            </ul>
+          <table>
+            <tr>
+              <td  colspan="4">
+                <input type="text" name="ekran" class="ekran1" placeholder="0"/></td> 
+            </tr>
+          </table> 
              <div>
-               <button class="btn btn-secondary btn-lg" type="button">(</button>
-               <button class="btn btn-secondary btn-lg" type="button">)</button>
-               <button class="btn btn-dark btn-lg" type="button">%</button>
-               <button class="btn btn-dark btn-lg" type="button">AC</button>
+               <button value="(" class="btn btn-secondary btn-lg" type="button">(</button>
+               <button value=")" class="btn btn-secondary btn-lg" type="button">)</button>
+               <button value="%" class="btn btn-dark btn-lg" type="button">%</button>
+               <button value="AC" id="temizle" class="btn btn-dark btn-lg" type="button">AC</button>
              </div>
              <div>
-              <button class="btn btn-secondary btn-lg" type="button">7</button>
-              <button class="btn btn-dark btn-lg" type="button" onclick="" >8</button>
-              <button class="btn btn-dark btn-lg" type="button">9</button>
-              <button class="btn btn-dark btn-lg bolme" type="button">/</button>
+              <button value="7" class="btn btn-secondary btn-lg " type="button">7</button>
+              <button value="8" class="btn btn-dark btn-lg " type="button" >8</button>
+              <button value="9" class="btn btn-dark btn-lg " type="button">9</button>
+              <button value="/" id="bolme" class="btn btn-dark btn-lg  " type="button">/</button>
             </div> 
 
             <div>
-              <button class="btn btn-dark btn-lg" type="button">4</button>
-              <button class="btn btn-dark btn-lg" type="button">5</button>
-              <button class="btn btn-dark btn-lg" type="button">6</button>
-              <button class="btn btn-dark btn-lg bolme" type="button">X</button>
+              <button value="4" class="btn btn-dark btn-lg " type="button">4</button>
+              <button value="5" class="btn btn-dark btn-lg " type="button">5</button>
+              <button value="6" class="btn btn-dark btn-lg " type="button">6</button>
+              <button value="*" id="bolme"  class="btn btn-dark btn-lg  " type="button">*</button>
             </div> 
 
             <div>
-              <button class="btn btn-secondary btn-lg" type="button">1</button>
-              <button class="btn btn-secondary btn-lg" type="button">2</button>
-              <button class="btn btn-secondary btn-lg" type="button">3</button>
-              <button class="btn btn-secondary btn-lg bolme" type="button">-</button>
+              <button value="1" class="btn btn-secondary btn-lg " type="button">1</button>
+              <button value="2" class="btn btn-secondary btn-lg " type="button">2</button>
+              <button value="3" class="btn btn-secondary btn-lg " type="button">3</button>
+              <button value="-" id="bolme" class="btn btn-secondary btn-lg " type="button">-</button>
             </div> 
             <div>
-              <button class="btn btn-secondary btn-lg" type="button">0</button>
-              <button class="btn btn-secondary btn-lg" type="button">,</button>
-              <button class="btn btn-danger btn-lg eqal" type="button">=</button>
-              <button class="btn btn-secondary btn-lg bolme" type="button">+</button>
+              <button value="0" class="btn btn-secondary btn-lg " type="button">0</button>
+              <button value="," class="btn btn-secondary btn-lg" type="button">,</button>
+              <button value="=" id="hesapla" class="btn btn-danger btn-lg eqal" type="button">=</button>
+              <button value="+" id="bolme" class="btn btn-secondary btn-lg  " type="button">+</button>
             </div> 
           </div>
           <div class="col-sm-2 sidenav">
@@ -102,8 +103,36 @@
       </div>
       <footer class="container-fluid text-center">
 </footer>
+<script>
+
+let dugme=document.getElementsByTagName("button");
+let ekran=document.getElementsByClassName("ekran1")[0];
+let hesapla=document.getElementById("hesapla");
+let temizle =document.getElementById("temizle");
+for(var i=0 ; i<21 ; i++){
+  if(i!=4 && i!=19){
+    dugme[i].addEventListener("click" , yazdir);
+  }
+}
+function yazdir(){
+  ekran.value = ekran.value+this.value;
+}
+
+hesapla.addEventListener("click",hesap);
+
+function hesap(){
+  ekran.value =eval(ekran.value);
+}
+temizle.addEventListener("click" , temiz);
+function temiz(){
+ ekran.value= "";
+}
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
 
+
+</script>
 </body>
 </html>

@@ -13,4 +13,3 @@
      p.textContent='Buton Ile Degisti';
  
  };
-
